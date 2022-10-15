@@ -20,6 +20,7 @@ interface Props {
 function Post({ post }: Props) {
     // console.log(post);
     const [submitted, setSubmitted] = useState(false);
+    const [clicked, setClicked] = useState(false);
 
     const {
         register,
@@ -28,6 +29,7 @@ function Post({ post }: Props) {
     } = useForm<IFormInput>();
 
     const onSubmit: SubmitHandler<IFormInput> = (data) => {
+        setClicked(true);
         // console.log(data);
         fetch("/api/createComment", {
             method: "POST",
@@ -40,6 +42,7 @@ function Post({ post }: Props) {
             .catch((err) => {
                 console.log(err);
                 setSubmitted(false);
+                setClicked(false);
             });
     };
     return (
@@ -179,11 +182,13 @@ function Post({ post }: Props) {
                         )}
                     </div>
 
-                    <input
-                        value="Submit"
-                        type="submit"
-                        className="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
-                    />
+                    {!clicked && (
+                        <input
+                            value="Submit"
+                            type="submit"
+                            className="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
+                        />
+                    )}
                 </form>
             )}
             {/* Comments */}
