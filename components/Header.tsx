@@ -22,9 +22,11 @@ function Header() {
             </div>
             <div className="flex items-center space-x-5 text-green-600">
                 <h3>Sign In</h3>
-                <h3 className="border px-4 py-1 rounded-full border-green-600">
-                    Get Started
-                </h3>
+                <Link href="/create">
+                    <h3 className="border px-4 py-1 rounded-full border-green-600 cursor-pointer">
+                        Create Blog
+                    </h3>
+                </Link>
             </div>
         </header>
     );
