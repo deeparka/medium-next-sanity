@@ -65,7 +65,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                                 {post.author.image && (
                                     <img
                                         className="h-12 w-12 rounded-full"
-                                        src={urlFor(post.author.image).url()}
+                                        src={post.author.image}
                                         alt={post.author.name}
                                     />
                                 )}
