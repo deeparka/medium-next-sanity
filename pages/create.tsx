@@ -3,15 +3,15 @@ import Select from "react-select";
 import Header from "../components/Header";
 
 function create() {
-    const options = [
-        { value: "chocolate", label: "Chocolate" },
-        { value: "strawberry", label: "Strawberry" },
-        { value: "vanilla", label: "Vanilla" },
-    ];
-    return (
-        <div>
-            <Header />
-            <form className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
+  const options = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
+  return (
+    <div>
+      <Header />
+      {/* <form className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
                 <h3 className="text-3xl font-bold text-yellow-500">
                     Create a New Blog
                 </h3>
@@ -70,9 +70,12 @@ function create() {
                     type="submit"
                     value="Submit"
                 />
-            </form>
-        </div>
-    );
+            </form> */}
+      <p className="text-center mt-40 font-bold">
+        Currently working on Create Blog and Author feature
+      </p>
+    </div>
+  );
 }
 
 export default create;
