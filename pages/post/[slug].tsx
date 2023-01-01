@@ -61,7 +61,7 @@ function Post({ post }: Props) {
                 <div className="flex items-center space-x-2">
                     <img
                         className="h-10 w-10 rounded-full "
-                        src={post.author.image}
+                        src={urlFor(post.author.image).url()}
                         alt=""
                     />
                     <p className="font-extralight text-sm">
